@@ -14,8 +14,23 @@ font-family: 'Poppins', sans-serif;
 
 /* Common */
 
+:root {
+  --black: #171718;
+  --black-border: #26292D;
+  --white: #fff;
+  --purple: #5C62EC;
+
+  --text-color: var(--black);
+  --dark-bg: var(--black);
+  --dark-border: var(--black-border);
+  --header-text: var(--white);
+  --accent: var(--purple);
+}
+
 body, html {
   font-family: 'DM Sans', sans-serif;
+  letter-spacing: -0.5px;
+  color: var(--text-color);
 }
 
 .container {
@@ -24,15 +39,16 @@ body, html {
   max-width: 1200px;
 }
 
-
 /* Nav */
 
 .nav {
-  background-color: #171718;
-  color: #FFFFFF;
+  background-color: var(--dark-bg);
+
+  color: var(--header-text);
+  letter-spacing: normal;
 
   padding: 20px 0;
-  border-bottom: 1px solid #26292D;
+  border-bottom: 1px solid var(--dark-border);
 }
 
 .nav-row {
@@ -44,9 +60,10 @@ body, html {
 }
 
 .logo {
-  color: #FFFFFF;
+  color: var(--header-text);
   font-size: 24px;
   font-family: 'Poppins', sans-serif; 
+  line-height: 100%;
 }
 
 .logo strong {
@@ -66,7 +83,12 @@ body, html {
 
 
 .nav-list__link {
-  color: #FFFFFF;
+  color: var(--header-text);
+  transition: opacity 0.2s ease-in;
+}
+
+.nav-list__link:hover {
+  opacity: 0.8;
 }
 
 .nav-list__link--active {
@@ -83,5 +105,85 @@ body, html {
   display: block;
   height: 3px;
   width: 100%;
-  background-color: #5C62EC;
+  background-color: var(--accent);
+}
+
+
+/* Header */
+
+.header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+
+  padding: 40px 0;
+  min-height: 695px;
+
+  background-color:  var(--dark-bg);
+  background-image: url('./../img/header-bg.png');
+  background-repeat: no-repeat;
+  background-size: auto;
+  background-position: center center;
+
+  color:  var(--header-text);
+}
+
+.header__wrapper {
+  max-width: 660px;
+  padding: 0 15px;
+}
+
+.header__title {
+  font-size: 40px;
+  font-weight: 700;
+  line-height: 140%;
+
+  margin-bottom: 20px;
+}
+
+.header__title strong {
+  font-size: 60px;
+  font-weight: 700;
+}
+
+.header__title em {
+  font-style: normal;
+  color: var(--accent);
+}
+
+.header__text {
+  font-size: 18px;
+  line-height: 24px;
+
+  margin-bottom: 40px;
+}
+
+.header__text p + p {
+  margin-top: 0.5em;
+}
+
+.btn {
+  display: inline-block;
+  height: 48px;
+  padding:  12px 28px;
+
+  border-radius: 5px;
+  background-color: var(--accent);
+
+  color: var(--white);
+  font-size: 16px;
+  letter-spacing: 0.15px;
+  font-weight: 500;
+
+  transition: opacity 0.2s ease-in;
+}
+
+.btn:hover {
+  opacity: 0.8;
+}
+
+.btn:active {
+  position: relative;
+  top: 1px;
 }
